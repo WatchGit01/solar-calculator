@@ -6,510 +6,188 @@
 <title>เครื่องคำนวณโซลาร์รูฟ - ประเทศไทย</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#1a5f2a,#2d8f47);min-height:100vh;padding:15px}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#1a5f2a,#2d8f47);min-height:100vh;padding:15px;color:#222}
 .container{max-width:1100px;margin:0 auto}
-h1{text-align:center;color:#fff;margin-bottom:10px;font-size:1.5rem}
-.subtitle{text-align:center;color:#e8f5e9;margin-bottom:15px;font-size:0.9rem}
-.card{background:#fff;border-radius:12px;padding:15px;margin-bottom:12px;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
-.card h2{color:#1a5f2a;border-bottom:2px solid #ffc107;padding-bottom:8px;margin-bottom:10px;font-size:1rem}
-.form-group{margin-bottom:10px}
-label{display:block;margin-bottom:3px;font-weight:600;color:#333;font-size:0.85rem}
-input,select{width:100%;padding:8px;border:2px solid #ddd;border-radius:6px;font-size:14px}
-input:focus,select:focus{border-color:#2d8f47;outline:none}
-.grid{display:grid;gap:10px}
-.grid-2{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.result-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);padding:10px;border-radius:8px;text-align:center}
-.result-box.highlight{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
-.result-box.success{background:linear-gradient(135deg,#e3f2fd,#bbdefb)}
-.result-value{font-size:1.3rem;font-weight:bold;color:#1a5f2a}
-.result-label{font-size:0.8rem;color:#666;margin-top:2px}
-.comparison-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:0.85rem}
-.comparison-table th,.comparison-table td{padding:8px;text-align:center;border:1px solid #ddd}
-.comparison-table th{background:#1a5f2a;color:#fff}
-.comparison-table tr:nth-child(even){background:#f5f5f5}
-.btn{background:#ffc107;color:#333;border:none;padding:12px 20px;font-size:1rem;font-weight:bold;border-radius:8px;cursor:pointer;width:100%}
-.btn:hover{background:#ffca28}
-.btn-secondary{background:#78909c;color:#fff;margin-top:8px}
-.note{background:#fff3cd;padding:10px;border-radius:6px;border-left:4px solid #ffc107;margin-top:10px;font-size:0.8rem}
-.badge{display:inline-block;padding:3px 6px;border-radius:4px;font-size:0.7rem;font-weight:bold}
-.badge-success{background:#4caf50;color:#fff}
-.badge-warning{background:#ff9800;color:#fff}
-.badge-danger{background:#f44336;color:#fff}
-.tabs{display:flex;gap:5px;margin-bottom:12px}
-.tab{padding:10px 15px;background:#e0e0e0;border:none;border-radius:6px 6px 0 0;cursor:pointer;font-weight:600;font-size:0.85rem;-webkit-appearance:none;appearance:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
-.tab.active{background:#1a5f2a;color:#fff}
-.input-mode{background:#e3f2fd;padding:8px;border-radius:6px;margin-bottom:10px;font-size:0.85rem}
-.hourly-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.hourly-grid{width:100%;min-width:560px;border-collapse:collapse;font-size:0.75rem}
-.hourly-grid input{width:100%;padding:3px;text-align:center;font-size:0.7rem;border:1px solid #ccc;border-radius:2px}
-.hourly-grid .header{background:#1a5f2a;color:#fff;padding:5px 2px;text-align:center;font-weight:bold}
-.hourly-grid .time-label{background:#e8f5e9;padding:3px;text-align:center;font-weight:600}
-@media(max-width:600px){h1{font-size:1.2rem}.result-value{font-size:1.1rem}.hourly-grid{font-size:0.6rem}}
+h1{text-align:center;color:#fff;margin-bottom:8px;font-size:1.5rem}.subtitle{text-align:center;color:#e8f5e9;margin-bottom:15px;font-size:.9rem}
+.card{background:#fff;border-radius:14px;padding:15px;margin-bottom:12px;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.card h2{color:#1a5f2a;border-bottom:2px solid #ffc107;padding-bottom:8px;margin-bottom:12px;font-size:1rem}
+.form-group{margin-bottom:10px} label{display:block;margin-bottom:4px;font-weight:600;color:#333;font-size:.85rem}
+input,select{width:100%;padding:9px;border:2px solid #ddd;border-radius:7px;font-size:16px;background:#fff} input:focus,select:focus{border-color:#2d8f47;outline:none}
+.grid{display:grid;gap:10px}.grid-2{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.grid-3{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tab{flex:1;padding:12px 10px;background:#e0e0e0;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-size:.9rem;-webkit-appearance:none;appearance:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}.tab.active{background:#1a5f2a;color:#fff}
+.input-mode{background:#e3f2fd;padding:10px;border-radius:7px;margin-bottom:10px;font-size:.85rem;line-height:1.45}.note{background:#fff3cd;padding:10px;border-radius:7px;border-left:4px solid #ffc107;margin-top:10px;font-size:.82rem;line-height:1.45}
+.btn{background:#ffc107;color:#333;border:none;padding:14px 20px;font-size:1rem;font-weight:bold;border-radius:9px;cursor:pointer;width:100%;touch-action:manipulation}.btn:hover{background:#ffca28}.btn-secondary{background:#78909c;color:#fff;margin-top:8px}
+.result-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);padding:12px;border-radius:9px;text-align:center}.result-box.highlight{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}.result-box.success{background:linear-gradient(135deg,#e3f2fd,#bbdefb)}.result-box.warning{background:linear-gradient(135deg,#ffebee,#ffcdd2)}
+.result-value{font-size:1.25rem;font-weight:bold;color:#1a5f2a}.result-label{font-size:.78rem;color:#666;margin-top:3px;line-height:1.25}
+.comparison-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.85rem}.comparison-table th,.comparison-table td{padding:8px;text-align:center;border:1px solid #ddd}.comparison-table th{background:#1a5f2a;color:#fff}.comparison-table tr:nth-child(even){background:#f5f5f5}
+.hourly-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.hourly-grid{width:100%;min-width:560px;border-collapse:collapse;font-size:.75rem}.hourly-grid th{background:#1a5f2a;color:#fff;padding:6px 4px;text-align:center;border:1px solid #d9ead3}.hourly-grid td{padding:3px;text-align:center;border:1px solid #ddd;background:#fff}.hourly-grid td:first-child{background:#e8f5e9;font-weight:600;white-space:nowrap}.hourly-grid input{width:100%;min-width:52px;padding:5px;text-align:center;font-size:16px;border:1px solid #ccc;border-radius:4px}
+.badge{display:inline-block;padding:4px 7px;border-radius:5px;font-size:.72rem;font-weight:700}.badge-ok{background:#4caf50;color:#fff}.badge-warn{background:#ff9800;color:#fff}.small{font-size:.78rem;color:#666;line-height:1.45}
+@media(max-width:600px){body{padding:10px}h1{font-size:1.18rem}.tabs{flex-direction:column}.result-value{font-size:1.1rem}.card{padding:13px}.comparison-table{font-size:.78rem}.comparison-table th,.comparison-table td{padding:6px}}
 </style>
 </head>
 <body>
 <div class="container">
-<h1>☀️ เครื่องคำนวณความคุ้มค่าโซลาร์รูฟ โดยท่านเบิ้มสุดหล่อ</h1>
-<p class="subtitle">สำหรับบ้านพักอาศัยในประเทศไทย (ข้อมูล 2567-2569)</p>
+<h1>☀️ เครื่องคำนวณความคุ้มค่าโซลาร์รูฟ</h1>
+<p class="subtitle">สำหรับบ้านพักอาศัยในประเทศไทย — เพิ่มตัวเลือกขายไฟส่วนเกินกลับเข้าระบบ</p>
+
 <div class="card">
 <h2>📊 เลือกวิธีใส่ข้อมูลการใช้ไฟ</h2>
 <div class="tabs">
 <button type="button" id="btnSimple" class="tab active">💡 แบบง่าย (บิลค่าไฟ)</button>
 <button type="button" id="btnHourly" class="tab">📋 แบบละเอียด (รายชั่วโมง)</button>
 </div>
-
 <div id="simpleTab" style="display:block;">
-<div class="input-mode">💡 <strong>โหมดง่าย:</strong> ใส่แค่ค่าไฟหรือหน่วยที่ใช้ต่อเดือน ระบบใช้ค่าเฉลี่ยในการคำนวณ</div>
+<div class="input-mode">💡 <b>โหมดง่าย:</b> ใส่ค่าไฟหรือหน่วยไฟต่อเดือน ระบบจะใช้ค่าเฉลี่ยในการคำนวณ</div>
 <div class="grid grid-2">
-<div class="form-group">
-<label>ประเภทอัตราค่าไฟ</label>
-<select id="tariffType">
-<option value="progressive">อัตราปกติ (Progressive)</option>
-<option value="tou">TOU (Time of Use)</option>
-<option value="tod">TOD (Time of Day)</option>
-</select>
-</div>
-<div class="form-group">
-<label>ค่าไฟฟ้าต่อเดือน (บาท)</label>
-<input type="number" id="monthlyBill" placeholder="เช่น 3500">
-</div>
-<div class="form-group">
-<label>หรือ หน่วยที่ใช้ต่อเดือน (kWh) - ถ้าทราบ</label>
-<input type="number" id="monthlyKwh" placeholder="เช่น 800">
+<div class="form-group"><label>ประเภทอัตราค่าไฟ</label><select id="tariffType"><option value="progressive">อัตราปกติ (Progressive)</option><option value="tou">TOU (Time of Use)</option><option value="tod">TOD (Time of Day)</option></select></div>
+<div class="form-group"><label>ค่าไฟฟ้าต่อเดือน (บาท)</label><input type="number" id="monthlyBill" placeholder="เช่น 3500"></div>
+<div class="form-group"><label>หรือ หน่วยที่ใช้ต่อเดือน (kWh) - ถ้าทราบ</label><input type="number" id="monthlyKwh" placeholder="เช่น 800"></div>
 </div>
 </div>
-</div>
-
 <div id="hourlyTab" style="display:none;">
-<div class="input-mode">📋 <strong>โหมดละเอียด:</strong> ใส่การใช้ไฟรายชั่วโมงแต่ละวัน ผลคำนวณแม่นยำกว่า</div>
+<div class="input-mode">📋 <b>โหมดละเอียด:</b> ใส่การใช้ไฟรายชั่วโมงแต่ละวัน ผลคำนวณจะสะท้อน Self-consumption ได้ดีกว่า</div>
 <div class="grid grid-3">
-<div class="form-group">
-<label>ประเภทอัตราค่าไฟ</label>
-<select id="tariffType2">
-<option value="progressive">อัตราปกติ (Progressive)</option>
-<option value="tou">TOU (Time of Use)</option>
-<option value="tod">TOD (Time of Day)</option>
-</select>
+<div class="form-group"><label>ประเภทอัตราค่าไฟ</label><select id="tariffType2"><option value="progressive">อัตราปกติ (Progressive)</option><option value="tou">TOU (Time of Use)</option><option value="tod">TOD (Time of Day)</option></select></div>
+<div class="form-group"><label>หน่วยที่ใส่</label><select id="hourlyUnit"><option value="kwh">kWh</option><option value="amp">Amp @ 220V</option></select></div>
+<div class="form-group"><label>สัปดาห์ต่อเดือน</label><input type="number" id="weeksPerMonth" value="4.33" step="0.1"></div>
 </div>
-<div class="form-group">
-<label>หน่วยที่ใส่</label>
-<select id="hourlyUnit">
-<option value="kwh">kWh (กิโลวัตต์-ชั่วโมง)</option>
-<option value="amp">Amp (แอมป์) @ 220V</option>
-</select>
-</div>
-<div class="form-group">
-<label>สัปดาห์ต่อเดือน</label>
-<input type="number" id="weeksPerMonth" value="4.33" step="0.1">
-</div>
-</div>
-<p style="margin:8px 0;font-size:0.8rem;color:#666;">📝 ใส่ค่าเฉลี่ยในแต่ละช่วงเวลา (ปล่อยว่าง=0)</p>
+<p class="small">📝 ใส่ค่าเฉลี่ยในแต่ละช่วงเวลา (ปล่อยว่าง = 0)</p>
 <div class="hourly-scroll"><table class="hourly-grid" id="hourlyGrid"></table></div>
-<button class="btn btn-secondary" onclick="fillSampleData()">📥 ใส่ข้อมูลตัวอย่าง</button>
+<button type="button" class="btn btn-secondary" id="sampleBtn">📥 ใส่ข้อมูลตัวอย่าง</button>
 </div>
 </div>
 
 <div class="card">
 <h2>⚡ ข้อมูลระบบโซลาร์</h2>
 <div class="grid grid-2">
-<div class="form-group">
-<label>ขนาดระบบโซลาร์ (kWp)</label>
-<input type="number" id="solarSize" value="5" step="0.5" min="1">
+<div class="form-group"><label>ขนาดระบบโซลาร์ (kWp)</label><input type="number" id="solarSize" value="5" step="0.5" min="1"></div>
+<div class="form-group"><label>ราคาติดตั้ง (บาท/kWp)</label><input type="number" id="solarCost" value="35000"></div>
+<div class="form-group"><label>แบตเตอรี่ (kWh) - ใส่ 0 ถ้าไม่ใช้</label><input type="number" id="batterySize" value="0" min="0"></div>
+<div class="form-group"><label>ราคาแบตเตอรี่ (บาท/kWh)</label><input type="number" id="batteryCost" value="15000"></div>
+<div class="form-group"><label>ขายไฟส่วนเกินกลับเข้าระบบ?</label><select id="sellBackOption"><option value="yes" selected>✅ ขายกลับเข้าระบบ</option><option value="no">❌ ไม่ขายกลับ / ไม่ได้ประโยชน์จากไฟส่วนเกิน</option></select></div>
+<div class="form-group"><label>อัตรารับซื้อไฟส่วนเกิน (บาท/kWh)</label><input type="number" id="sellBackRate" value="2.20" step="0.01" min="0"></div>
 </div>
-<div class="form-group">
-<label>ราคาติดตั้ง (บาท/kWp)</label>
-<input type="number" id="solarCost" value="35000">
-</div>
-<div class="form-group">
-<label>แบตเตอรี่ (kWh) - ใส่ 0 ถ้าไม่ใช้</label>
-<input type="number" id="batterySize" value="0" min="0">
-</div>
-<div class="form-group">
-<label>ราคาแบตเตอรี่ (บาท/kWh)</label>
-<input type="number" id="batteryCost" value="15000">
-</div>
-</div>
+<div class="note">📌 <b>หมายเหตุ:</b> หากเลือก “ไม่ขายกลับ” ระบบจะคิดว่าไฟฟ้าส่วนเกินที่ไม่ได้ใช้เองไม่มีมูลค่าทางการเงิน ซึ่งช่วยให้เห็นผลกระทบของการ Oversize ระบบได้ชัดเจนขึ้น</div>
 </div>
 
 <div class="card">
 <h2>🎁 สิทธิประโยชน์ภาษี</h2>
 <div class="grid grid-2">
-<div class="form-group">
-<label>ใช้สิทธิลดหย่อนภาษี?</label>
-<select id="useTaxCredit">
-<option value="yes">ใช่ - ลดหย่อนได้สูงสุด 200,000 บาท</option>
-<option value="no">ไม่ใช้</option>
-</select>
+<div class="form-group"><label>ใช้สิทธิลดหย่อนภาษี?</label><select id="useTaxCredit"><option value="yes">ใช่ - ลดหย่อนได้สูงสุด 200,000 บาท</option><option value="no">ไม่ใช้</option></select></div>
+<div class="form-group"><label>อัตราภาษีเงินได้ (%)</label><select id="taxRate"><option value="0">0%</option><option value="5">5%</option><option value="10">10%</option><option value="15">15%</option><option value="20" selected>20%</option><option value="25">25%</option><option value="30">30%</option><option value="35">35%</option></select></div>
 </div>
-<div class="form-group">
-<label>อัตราภาษีเงินได้ (%)</label>
-<select id="taxRate">
-<option value="0">0%</option>
-<option value="5">5%</option>
-<option value="10">10%</option>
-<option value="15">15%</option>
-<option value="20" selected>20%</option>
-<option value="25">25%</option>
-<option value="30">30%</option>
-<option value="35">35%</option>
-</select>
-</div>
-</div>
-<div class="note">📌 พ.ร.ฎ.805: ลดหย่อนค่าติดตั้งโซลาร์ได้ไม่เกิน 200,000 บาท (ถึง 31 ธ.ค. 2571)</div>
+<div class="note">📌 ลดหย่อนค่าติดตั้งโซลาร์ได้ไม่เกิน 200,000 บาท ทั้งนี้ควรตรวจสอบเงื่อนไขล่าสุดจากหน่วยงานราชการก่อนใช้งานจริง</div>
 </div>
 
-<button class="btn" onclick="calculate()">🔍 คำนวณความคุ้มค่า</button>
+<button type="button" class="btn" id="calcBtn">🔍 คำนวณความคุ้มค่า</button>
 
 <div id="results" style="display:none;">
-<div class="card">
-<h2>📈 ผลวิเคราะห์ - โซลาร์อย่างเดียว</h2>
-<div class="grid grid-2">
+<div class="card"><h2>📈 ผลวิเคราะห์ - โซลาร์อย่างเดียว</h2>
+<div class="grid grid-3">
 <div class="result-box"><div class="result-value" id="solarProduction">-</div><div class="result-label">ผลิตไฟ/ปี (kWh)</div></div>
-<div class="result-box highlight"><div class="result-value" id="solarSavings">-</div><div class="result-label">ประหยัด/ปี (บาท)</div></div>
+<div class="result-box highlight"><div class="result-value" id="solarSavings">-</div><div class="result-label">ประโยชน์รวม/ปี (บาท)</div></div>
 <div class="result-box success"><div class="result-value" id="solarPayback">-</div><div class="result-label">คืนทุน (ปี)</div></div>
 <div class="result-box"><div class="result-value" id="solarIRR">-</div><div class="result-label">IRR (%)</div></div>
+<div class="result-box"><div class="result-value" id="solarExcess">-</div><div class="result-label">ไฟส่วนเกิน/ปี (kWh)</div></div>
+<div class="result-box" id="sellIncomeBox"><div class="result-value" id="solarSellIncome">-</div><div class="result-label">รายได้ขายไฟ/ปี (บาท)</div></div>
 </div>
+<div class="note" id="sellBackNote" style="display:none;"></div>
 </div>
 
-<div class="card" id="batteryResults" style="display:none;">
-<h2>🔋 ผลวิเคราะห์ - โซลาร์ + แบตเตอรี่</h2>
-<div class="grid grid-2">
+<div class="card" id="batteryResults" style="display:none;"><h2>🔋 ผลวิเคราะห์ - โซลาร์ + แบตเตอรี่</h2>
+<div class="grid grid-3">
 <div class="result-box"><div class="result-value" id="batteryTotalCost">-</div><div class="result-label">ต้นทุนรวม (บาท)</div></div>
-<div class="result-box highlight"><div class="result-value" id="batterySavings">-</div><div class="result-label">ประหยัด/ปี (บาท)</div></div>
+<div class="result-box highlight"><div class="result-value" id="batterySavings">-</div><div class="result-label">ประโยชน์รวม/ปี (บาท)</div></div>
 <div class="result-box success"><div class="result-value" id="batteryPayback">-</div><div class="result-label">คืนทุน (ปี)</div></div>
 <div class="result-box"><div class="result-value" id="batteryIRR">-</div><div class="result-label">IRR (%)</div></div>
-</div>
+<div class="result-box"><div class="result-value" id="batteryExcess">-</div><div class="result-label">ไฟส่วนเกิน/ปี (kWh)</div></div>
+<div class="result-box"><div class="result-value" id="batterySellIncome">-</div><div class="result-label">รายได้ขายไฟ/ปี (บาท)</div></div>
+</div></div>
+
+<div class="card" id="hourlyAnalysis" style="display:none;"><h2>📊 วิเคราะห์รูปแบบการใช้ไฟ</h2>
+<div class="grid grid-3"><div class="result-box"><div class="result-value" id="totalWeeklyKwh">-</div><div class="result-label">ใช้/สัปดาห์ (kWh)</div></div><div class="result-box"><div class="result-value" id="daytimeUsage">-</div><div class="result-label">ใช้ช่วง 06-18น (%)</div></div><div class="result-box highlight"><div class="result-value" id="solarMatchRate">-</div><div class="result-label">โซลาร์ตรงช่วงใช้ (%)</div></div></div>
 </div>
 
-<div class="card" id="hourlyAnalysis" style="display:none;">
-<h2>📊 วิเคราะห์รูปแบบการใช้ไฟ</h2>
-<div class="grid grid-3">
-<div class="result-box"><div class="result-value" id="totalWeeklyKwh">-</div><div class="result-label">ใช้/สัปดาห์ (kWh)</div></div>
-<div class="result-box"><div class="result-value" id="daytimeUsage">-</div><div class="result-label">ใช้ช่วง 06-18น (%)</div></div>
-<div class="result-box highlight"><div class="result-value" id="solarMatchRate">-</div><div class="result-label">โซลาร์ตรงช่วงใช้ (%)</div></div>
-</div>
-</div>
-
-<div class="card">
-<h2>⚖️ เปรียบเทียบ</h2>
-<table class="comparison-table">
-<thead><tr><th>รายการ</th><th>โซลาร์</th><th id="batteryColHeader" style="display:none;">โซลาร์+แบต</th></tr></thead>
-<tbody>
+<div class="card"><h2>⚖️ เปรียบเทียบ</h2>
+<table class="comparison-table"><thead><tr><th>รายการ</th><th>โซลาร์</th><th id="batteryColHeader" style="display:none;">โซลาร์+แบต</th></tr></thead><tbody>
 <tr><td>ต้นทุน</td><td id="cmpSolarCost">-</td><td id="cmpBatteryCost" style="display:none;">-</td></tr>
 <tr><td>ลดหย่อนภาษี</td><td id="cmpSolarTax">-</td><td id="cmpBatteryTax" style="display:none;">-</td></tr>
 <tr><td>ต้นทุนสุทธิ</td><td id="cmpSolarNet">-</td><td id="cmpBatteryNet" style="display:none;">-</td></tr>
-<tr><td>ประหยัด/ปี</td><td id="cmpSolarSave">-</td><td id="cmpBatterySave" style="display:none;">-</td></tr>
+<tr><td>ประหยัดค่าไฟ/ปี</td><td id="cmpSolarBillSave">-</td><td id="cmpBatteryBillSave" style="display:none;">-</td></tr>
+<tr><td>รายได้ขายไฟ/ปี</td><td id="cmpSolarSell">-</td><td id="cmpBatterySell" style="display:none;">-</td></tr>
+<tr><td>ประโยชน์รวม/ปี</td><td id="cmpSolarSave">-</td><td id="cmpBatterySave" style="display:none;">-</td></tr>
 <tr><td>คืนทุน</td><td id="cmpSolarPB">-</td><td id="cmpBatteryPB" style="display:none;">-</td></tr>
 <tr><td>กำไร 25 ปี</td><td id="cmpSolarProfit">-</td><td id="cmpBatteryProfit" style="display:none;">-</td></tr>
 <tr><td>คำแนะนำ</td><td id="cmpSolarRec">-</td><td id="cmpBatteryRec" style="display:none;">-</td></tr>
-</tbody>
-</table>
-</div>
+</tbody></table></div>
 
-<div class="card">
-<h2>📋 สมมติฐาน</h2>
-<div style="font-size:0.8rem;line-height:1.6;">
-<p>🌤️ แดดเฉลี่ย: <b>5.23 ชม./วัน</b> | ⚙️ ประสิทธิภาพ: <b>80%</b> | 📉 เสื่อม: <b>0.5%/ปี</b></p>
-<p>🏠 ใช้เอง(โซลาร์): <b>70%</b> | 🔋 (มีแบต): <b>85%</b> | 💰 ขายคืน: <b>2.20 บาท/kWh</b></p>
-<p>📈 คาดค่าไฟเพิ่ม: <b>3%/ปี</b> | ⏱️ อายุ: <b>25 ปี</b></p>
+<div class="card"><h2>📋 สมมติฐาน</h2>
+<div class="small"><p>🌤️ แดดเฉลี่ย: <b>5.23 ชม./วัน</b> | ⚙️ ประสิทธิภาพ: <b>80%</b> | 📉 เสื่อม: <b>0.5%/ปี</b></p><p>🏠 ใช้เอง(โซลาร์): <b>70%</b> | 🔋 มีแบต: <b>85%</b> | 💰 ขายคืน: <b id="assumptionSellBack">ขึ้นอยู่กับตัวเลือก</b></p><p>📈 คาดค่าไฟเพิ่ม: <b>3%/ปี</b> | ⏱️ อายุโครงการ: <b>25 ปี</b></p></div>
 </div>
-</div>
-</div>
-
-<div class="card">
-<h2>📖 อัตราค่าไฟอ้างอิง (2567-2569)</h2>
-<p style="font-size:0.75rem;color:#666;margin-bottom:5px;">* รวม Ft = 0.1623 บาท/หน่วย</p>
-<table class="comparison-table">
-<tr><th>ประเภท</th><th>ช่วง</th><th>บาท/kWh</th></tr>
-<tr><td rowspan="3">ปกติ</td><td>0-150</td><td>3.2484</td></tr>
-<tr><td>151-400</td><td>4.2218</td></tr>
-<tr><td>401+</td><td>4.4217</td></tr>
-<tr><td rowspan="2">TOU</td><td>Peak 09-22 จ-ศ</td><td>5.7982</td></tr>
-<tr><td>Off-Peak</td><td>2.6369</td></tr>
-<tr><td rowspan="3">TOD</td><td>Peak</td><td>5.2734</td></tr>
-<tr><td>Partial</td><td>3.8524</td></tr>
-<tr><td>Off-Peak</td><td>2.6174</td></tr>
-</table>
 </div>
 </div>
 
 <script>
-// ค่าคงที่
-const TARIFF = {
-  prog: [{max:150,rate:3.2484},{max:400,rate:4.2218},{max:Infinity,rate:4.4217}],
-  tou: {peak:5.7982,offpeak:2.6369},
-  tod: {peak:5.2734,partial:3.8524,offpeak:2.6174}
-};
-const FT = 0.1623;
-const SUN_HOURS = 5.23;
-const EFF = 0.80;
-const DEGRADE = 0.005;
-const SELF_SOLAR = 0.70;
-const SELF_BATTERY = 0.85;
-const SELLBACK = 2.20;
-const ESCAL = 0.03;
-const LIFE = 25;
-const MAX_TAX = 200000;
-let currentMode = 'simple';
+var TARIFF={prog:[{max:150,rate:3.2484},{max:400,rate:4.2218},{max:Infinity,rate:4.4217}],tou:{peak:5.7982,offpeak:2.6369},tod:{peak:5.2734,partial:3.8524,offpeak:2.6174}};
+var SUN_HOURS=5.23, EFF=0.80, DEGRADE=0.005, SELF_SOLAR=0.70, SELF_BATTERY=0.85, ESCAL=0.03, LIFE=25, MAX_TAX=200000;
+var currentMode='simple';
 
-// เริ่มต้น
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded',function(){
   initHourlyGrid();
-
-  var btnSimple = document.getElementById('btnSimple');
-  var btnHourly = document.getElementById('btnHourly');
-
-  if (btnSimple) {
-    btnSimple.addEventListener('click', function(e) {
-      e.preventDefault();
-      switchTab('simple');
-    });
-  }
-
-  if (btnHourly) {
-    btnHourly.addEventListener('click', function(e) {
-      e.preventDefault();
-      switchTab('hourly');
-    });
-  }
+  document.getElementById('btnSimple').addEventListener('click',function(e){e.preventDefault();switchTab('simple');});
+  document.getElementById('btnHourly').addEventListener('click',function(e){e.preventDefault();switchTab('hourly');});
+  document.getElementById('sampleBtn').addEventListener('click',function(e){e.preventDefault();fillSampleData();});
+  document.getElementById('calcBtn').addEventListener('click',function(e){e.preventDefault();calculate();});
 });
-
-function switchTab(mode) {
-  currentMode = mode;
-  document.getElementById('simpleTab').style.display = mode==='simple'?'block':'none';
-  document.getElementById('hourlyTab').style.display = mode==='hourly'?'block':'none';
-  document.getElementById('btnSimple').className = mode==='simple'?'tab active':'tab';
-  document.getElementById('btnHourly').className = mode==='hourly'?'tab active':'tab';
-}
-
-function initHourlyGrid() {
-  var grid = document.getElementById('hourlyGrid');
-  if (!grid) return;
-
-  var days = ['จ','อ','พ','พฤ','ศ','ส','อา'];
-  var html = '<thead><tr><th>ชม.</th>';
-
-  for (var d = 0; d < 7; d++) {
-    html += '<th>' + days[d] + '</th>';
+function switchTab(mode){currentMode=mode;document.getElementById('simpleTab').style.display=mode==='simple'?'block':'none';document.getElementById('hourlyTab').style.display=mode==='hourly'?'block':'none';document.getElementById('btnSimple').className=mode==='simple'?'tab active':'tab';document.getElementById('btnHourly').className=mode==='hourly'?'tab active':'tab';}
+function initHourlyGrid(){var grid=document.getElementById('hourlyGrid');var days=['จ','อ','พ','พฤ','ศ','ส','อา'];var html='<thead><tr><th>ชม.</th>';for(var d=0;d<7;d++)html+='<th>'+days[d]+'</th>';html+='</tr></thead><tbody>';for(var h=0;h<24;h++){html+='<tr><td>'+String(h).padStart(2,'0')+':00</td>';for(var d=0;d<7;d++)html+='<td><input type="number" inputmode="decimal" id="h'+h+'d'+d+'" value="0" min="0" step="0.1"></td>';html+='</tr>';}html+='</tbody>';grid.innerHTML=html;}
+function fillSampleData(){var pat=[0.3,0.3,0.3,0.3,0.3,0.3,0.5,0.8,0.6,0.4,0.3,0.3,0.4,0.5,0.4,0.3,0.4,0.6,1.2,1.5,1.3,1.0,0.6,0.4];for(var h=0;h<24;h++){for(var d=0;d<7;d++){document.getElementById('h'+h+'d'+d).value=pat[h].toFixed(1);}}}
+function getHourlyData(){var unit=document.getElementById('hourlyUnit').value;var data=[],total=0;for(var h=0;h<24;h++){var row=[];for(var d=0;d<7;d++){var v=parseFloat(document.getElementById('h'+h+'d'+d).value)||0;if(unit==='amp')v=v*220/1000;row.push(v);total+=v;}data.push(row);}return{data:data,total:total};}
+function fmt(n){if(!isFinite(n))return'-';return n.toLocaleString('th-TH',{maximumFractionDigits:0});}
+function getAvgRate(type,kwh){if(!kwh||kwh<=0)return 0;if(type==='tou')return TARIFF.tou.peak*0.5+TARIFF.tou.offpeak*0.5;if(type==='tod')return TARIFF.tod.peak*0.3+TARIFF.tod.partial*0.3+TARIFF.tod.offpeak*0.4;var cost=0,remain=kwh;for(var i=0;i<TARIFF.prog.length;i++){var t=TARIFF.prog[i];var prev=i===0?0:TARIFF.prog[i-1].max;var units=Math.min(remain,t.max-prev);cost+=units*t.rate;remain-=units;if(remain<=0)break;}return cost/kwh;}
+function calcIRR(cf){var r=.1;for(var i=0;i<100;i++){var npv=0,dnpv=0;for(var t=0;t<cf.length;t++){npv+=cf[t]/Math.pow(1+r,t);dnpv-=t*cf[t]/Math.pow(1+r,t+1);}if(dnpv===0)return 0;var nr=r-npv/dnpv;if(!isFinite(nr))return 0;if(Math.abs(nr-r)<.0001)return nr*100;r=nr;}return r*100;}
+function setText(id,val){var el=document.getElementById(id);if(el)el.textContent=val;}
+function setDisplay(selector,display){document.querySelectorAll(selector).forEach(function(e){e.style.display=display;});}
+function calculate(){
+  var tariffType=document.getElementById(currentMode==='hourly'?'tariffType2':'tariffType').value;
+  var solarKwp=parseFloat(document.getElementById('solarSize').value)||5;
+  var solarCostPerKwp=parseFloat(document.getElementById('solarCost').value)||35000;
+  var batteryKwh=parseFloat(document.getElementById('batterySize').value)||0;
+  var batteryCostPerKwh=parseFloat(document.getElementById('batteryCost').value)||15000;
+  var useTax=document.getElementById('useTaxCredit').value==='yes';
+  var taxPct=(parseFloat(document.getElementById('taxRate').value)||0)/100;
+  var isSellBack=document.getElementById('sellBackOption').value==='yes';
+  var sellBackRate=parseFloat(document.getElementById('sellBackRate').value); if(!isFinite(sellBackRate)||sellBackRate<0)sellBackRate=0;
+  var monthlyKwh,selfConsSolar=SELF_SOLAR,selfConsBatt=SELF_BATTERY,daytime=50,matchRate=70;
+  if(currentMode==='hourly'){
+    var hd=getHourlyData();var weeklyKwh=hd.total;var weeks=parseFloat(document.getElementById('weeksPerMonth').value)||4.33;monthlyKwh=weeklyKwh*weeks;
+    var daySum=0;for(var h=6;h<18;h++)for(var d=0;d<7;d++)daySum+=hd.data[h][d];daytime=weeklyKwh>0?Math.round(daySum/weeklyKwh*100):0;
+    var sunSum=0;for(var h=9;h<16;h++)for(var d=0;d<7;d++)sunSum+=hd.data[h][d];matchRate=weeklyKwh>0?Math.round(sunSum/weeklyKwh*100):0;
+    selfConsSolar=Math.min(.90,matchRate/100+.2);selfConsBatt=Math.min(.95,selfConsSolar+.15);
+    document.getElementById('hourlyAnalysis').style.display='block';setText('totalWeeklyKwh',fmt(Math.round(weeklyKwh)));setText('daytimeUsage',daytime+'%');setText('solarMatchRate',matchRate+'%');
+  }else{
+    document.getElementById('hourlyAnalysis').style.display='none';var inputKwh=parseFloat(document.getElementById('monthlyKwh').value)||0;var inputBill=parseFloat(document.getElementById('monthlyBill').value)||0;
+    if(inputKwh>0)monthlyKwh=inputKwh;else if(inputBill>0){var roughRate=tariffType==='progressive'?3.7:tariffType==='tou'?4.2:4.0;monthlyKwh=inputBill/roughRate;}else monthlyKwh=500;
   }
-
-  html += '</tr></thead><tbody>';
-
-  for (var h = 0; h < 24; h++) {
-    html += '<tr><td>' + String(h).padStart(2, '0') + ':00</td>';
-    for (var d = 0; d < 7; d++) {
-      html += '<td><input type="number" inputmode="decimal" id="h' + h + 'd' + d + '" value="0" min="0" step="0.1"></td>';
-    }
-    html += '</tr>';
-  }
-
-  html += '</tbody>';
-  grid.innerHTML = html;
-}
-
-function fillSampleData() {
-  const pat = [0.3,0.3,0.3,0.3,0.3,0.3,0.5,0.8,0.6,0.4,0.3,0.3,0.4,0.5,0.4,0.3,0.4,0.6,1.2,1.5,1.3,1.0,0.6,0.4];
-  for(let h=0;h<24;h++) {
-    for(let d=0;d<7;d++) {
-      document.getElementById('h'+h+'d'+d).value = pat[h].toFixed(1);
-    }
-  }
-}
-
-function getHourlyData() {
-  const unit = document.getElementById('hourlyUnit').value;
-  let data = [];
-  let total = 0;
-  for(let h=0;h<24;h++) {
-    let row = [];
-    for(let d=0;d<7;d++) {
-      let v = parseFloat(document.getElementById('h'+h+'d'+d).value)||0;
-      if(unit==='amp') v = v*220/1000;
-      row.push(v);
-      total += v;
-    }
-    data.push(row);
-  }
-  return {data:data,total:total};
-}
-
-function fmt(n) { return n.toLocaleString('th-TH',{maximumFractionDigits:0}); }
-
-function getAvgRate(type,kwh) {
-  if(type==='tou') return TARIFF.tou.peak*0.5 + TARIFF.tou.offpeak*0.5;
-  if(type==='tod') return TARIFF.tod.peak*0.3 + TARIFF.tod.partial*0.3 + TARIFF.tod.offpeak*0.4;
-  let cost=0,remain=kwh;
-  for(let t of TARIFF.prog) {
-    let prev = t===TARIFF.prog[0]?0:TARIFF.prog[TARIFF.prog.indexOf(t)-1].max;
-    let units = Math.min(remain,t.max-prev);
-    cost += units*t.rate;
-    remain -= units;
-    if(remain<=0) break;
-  }
-  return cost/kwh;
-}
-
-function calcIRR(cf) {
-  let r=0.1;
-  for(let i=0;i<100;i++) {
-    let npv=0,dnpv=0;
-    for(let t=0;t<cf.length;t++) {
-      npv += cf[t]/Math.pow(1+r,t);
-      dnpv -= t*cf[t]/Math.pow(1+r,t+1);
-    }
-    let nr = r - npv/dnpv;
-    if(Math.abs(nr-r)<0.0001) return nr*100;
-    r=nr;
-  }
-  return r*100;
-}
-
-function calculate() {
-  // รับค่า
-  const tariffType = document.getElementById(currentMode==='hourly'?'tariffType2':'tariffType').value;
-  const solarKwp = parseFloat(document.getElementById('solarSize').value)||5;
-  const solarCostPerKwp = parseFloat(document.getElementById('solarCost').value)||35000;
-  const batteryKwh = parseFloat(document.getElementById('batterySize').value)||0;
-  const batteryCostPerKwh = parseFloat(document.getElementById('batteryCost').value)||15000;
-  const useTax = document.getElementById('useTaxCredit').value==='yes';
-  const taxPct = parseFloat(document.getElementById('taxRate').value)/100;
-  
-  // คำนวณการใช้ไฟ
-  let monthlyKwh;
-  let selfConsSolar = SELF_SOLAR, selfConsBatt = SELF_BATTERY;
-  let daytime = 50, matchRate = 70;
-  
-  if(currentMode==='hourly') {
-    const hd = getHourlyData();
-    const weeklyKwh = hd.total;
-    monthlyKwh = weeklyKwh * 4.33;
-    // วิเคราะห์ช่วงเวลา
-    let daySum=0;
-    for(let h=6;h<18;h++) for(let d=0;d<7;d++) daySum += hd.data[h][d];
-    daytime = Math.round(daySum/weeklyKwh*100);
-    // ช่วงแดดส่อง 9-16
-    let sunSum=0;
-    for(let h=9;h<16;h++) for(let d=0;d<7;d++) sunSum += hd.data[h][d];
-    matchRate = Math.round(sunSum/weeklyKwh*100);
-    selfConsSolar = Math.min(0.90, matchRate/100 + 0.2);
-    selfConsBatt = Math.min(0.95, selfConsSolar + 0.15);
-    // แสดงผล hourly
-    document.getElementById('hourlyAnalysis').style.display = 'block';
-    document.getElementById('totalWeeklyKwh').textContent = fmt(Math.round(weeklyKwh));
-    document.getElementById('daytimeUsage').textContent = daytime + '%';
-    document.getElementById('solarMatchRate').textContent = matchRate + '%';
-  } else {
-    document.getElementById('hourlyAnalysis').style.display = 'none';
-    const inputKwh = parseFloat(document.getElementById('monthlyKwh').value)||0;
-    const inputBill = parseFloat(document.getElementById('monthlyBill').value)||0;
-    if(inputKwh > 0) {
-      monthlyKwh = inputKwh;
-    } else if(inputBill > 0) {
-      // ประมาณจากบิล
-      const avgRate = tariffType==='progressive'?3.7:tariffType==='tou'?4.2:4.0;
-      monthlyKwh = inputBill/avgRate;
-    } else {
-      monthlyKwh = 500; // default
-    }
-  }
-  
-  const yearlyKwh = monthlyKwh * 12;
-  const avgRate = getAvgRate(tariffType, monthlyKwh);
-  
-  // โซลาร์ผลิต
-  const yearlyProd = solarKwp * SUN_HOURS * 365 * EFF;
-  const selfUseKwh = Math.min(yearlyProd * selfConsSolar, yearlyKwh);
-  const excessKwh = yearlyProd - selfUseKwh;
-  
-  // ต้นทุนและภาษี - โซลาร์
-  const solarTotal = solarKwp * solarCostPerKwp;
-  const solarTaxSave = useTax ? Math.min(solarTotal, MAX_TAX) * taxPct : 0;
-  const solarNetCost = solarTotal - solarTaxSave;
-  
-  // ประหยัดปีแรก - โซลาร์
-  const solarSaveY1 = selfUseKwh * avgRate + excessKwh * SELLBACK;
-  
-  // Cash flow 25 ปี - โซลาร์
-  let solarCF = [-solarNetCost];
-  let solarCumSave = 0;
-  for(let y=1;y<=LIFE;y++) {
-    const deg = Math.pow(1-DEGRADE,y-1);
-    const esc = Math.pow(1+ESCAL,y-1);
-    const prodY = yearlyProd * deg;
-    const selfY = Math.min(prodY * selfConsSolar, yearlyKwh);
-    const exY = prodY - selfY;
-    const saveY = selfY * avgRate * esc + exY * SELLBACK;
-    solarCF.push(saveY);
-    solarCumSave += saveY;
-  }
-  const solarPayback = solarNetCost / solarSaveY1;
-  const solarIRR = calcIRR(solarCF);
-  const solarProfit = solarCumSave - solarNetCost;
-  
-  // แสดงผลโซลาร์
-  document.getElementById('solarProduction').textContent = fmt(Math.round(yearlyProd));
-  document.getElementById('solarSavings').textContent = fmt(Math.round(solarSaveY1));
-  document.getElementById('solarPayback').textContent = solarPayback.toFixed(1);
-  document.getElementById('solarIRR').textContent = solarIRR.toFixed(1) + '%';
-  
-  document.getElementById('cmpSolarCost').textContent = fmt(solarTotal);
-  document.getElementById('cmpSolarTax').textContent = fmt(solarTaxSave);
-  document.getElementById('cmpSolarNet').textContent = fmt(solarNetCost);
-  document.getElementById('cmpSolarSave').textContent = fmt(Math.round(solarSaveY1));
-  document.getElementById('cmpSolarPB').textContent = solarPayback.toFixed(1) + ' ปี';
-  document.getElementById('cmpSolarProfit').textContent = fmt(Math.round(solarProfit));
-  document.getElementById('cmpSolarRec').textContent = solarPayback<=8?'✅ คุ้ม':'⚠️ ตรวจสอบ';
-  
-  // แบตเตอรี่
-  if(batteryKwh > 0) {
-    document.getElementById('batteryResults').style.display = 'block';
-    document.getElementById('batteryColHeader').style.display = '';
-    document.querySelectorAll('#cmpBatteryCost,#cmpBatteryTax,#cmpBatteryNet,#cmpBatterySave,#cmpBatteryPB,#cmpBatteryProfit,#cmpBatteryRec').forEach(e=>e.style.display='');
-    
-    const battTotal = solarTotal + batteryKwh * batteryCostPerKwh;
-    const battTaxSave = useTax ? Math.min(battTotal, MAX_TAX) * taxPct : 0;
-    const battNetCost = battTotal - battTaxSave;
-    
-    const battSelfKwh = Math.min(yearlyProd * selfConsBatt, yearlyKwh);
-    const battExKwh = yearlyProd - battSelfKwh;
-    const battSaveY1 = battSelfKwh * avgRate + battExKwh * SELLBACK;
-    
-    let battCF = [-battNetCost];
-    let battCumSave = 0;
-    for(let y=1;y<=LIFE;y++) {
-      const deg = Math.pow(1-DEGRADE,y-1);
-      const esc = Math.pow(1+ESCAL,y-1);
-      const prodY = yearlyProd * deg;
-      const selfY = Math.min(prodY * selfConsBatt, yearlyKwh);
-      const exY = prodY - selfY;
-      const saveY = selfY * avgRate * esc + exY * SELLBACK;
-      battCF.push(saveY);
-      battCumSave += saveY;
-    }
-    const battPayback = battNetCost / battSaveY1;
-    const battIRR = calcIRR(battCF);
-    const battProfit = battCumSave - battNetCost;
-    
-    document.getElementById('batteryTotalCost').textContent = fmt(battTotal);
-    document.getElementById('batterySavings').textContent = fmt(Math.round(battSaveY1));
-    document.getElementById('batteryPayback').textContent = battPayback.toFixed(1);
-    document.getElementById('batteryIRR').textContent = battIRR.toFixed(1) + '%';
-    
-    document.getElementById('cmpBatteryCost').textContent = fmt(battTotal);
-    document.getElementById('cmpBatteryTax').textContent = fmt(battTaxSave);
-    document.getElementById('cmpBatteryNet').textContent = fmt(battNetCost);
-    document.getElementById('cmpBatterySave').textContent = fmt(Math.round(battSaveY1));
-    document.getElementById('cmpBatteryPB').textContent = battPayback.toFixed(1) + ' ปี';
-    document.getElementById('cmpBatteryProfit').textContent = fmt(Math.round(battProfit));
-    document.getElementById('cmpBatteryRec').textContent = battPayback<=10?'✅ คุ้ม':'⚠️ ตรวจสอบ';
-  } else {
-    document.getElementById('batteryResults').style.display = 'none';
-    document.getElementById('batteryColHeader').style.display = 'none';
-    document.querySelectorAll('#cmpBatteryCost,#cmpBatteryTax,#cmpBatteryNet,#cmpBatterySave,#cmpBatteryPB,#cmpBatteryProfit,#cmpBatteryRec').forEach(e=>e.style.display='none');
-  }
-  
-  document.getElementById('results').style.display = 'block';
+  var yearlyKwh=monthlyKwh*12,avgRate=getAvgRate(tariffType,monthlyKwh),yearlyProd=solarKwp*SUN_HOURS*365*EFF;
+  var selfUseKwh=Math.min(yearlyProd*selfConsSolar,yearlyKwh),excessKwh=Math.max(0,yearlyProd-selfUseKwh);
+  var solarBillSaveY1=selfUseKwh*avgRate,solarSellY1=isSellBack?excessKwh*sellBackRate:0,solarSaveY1=solarBillSaveY1+solarSellY1;
+  var solarTotal=solarKwp*solarCostPerKwp,solarTaxSave=useTax?Math.min(solarTotal,MAX_TAX)*taxPct:0,solarNetCost=solarTotal-solarTaxSave;
+  var solarCF=[-solarNetCost],solarCumSave=0;for(var y=1;y<=LIFE;y++){var deg=Math.pow(1-DEGRADE,y-1),esc=Math.pow(1+ESCAL,y-1),prodY=yearlyProd*deg,selfY=Math.min(prodY*selfConsSolar,yearlyKwh),exY=Math.max(0,prodY-selfY),sellY=isSellBack?exY*sellBackRate:0,saveY=selfY*avgRate*esc+sellY;solarCF.push(saveY);solarCumSave+=saveY;}
+  var solarPayback=solarSaveY1>0?solarNetCost/solarSaveY1:Infinity,solarIRR=calcIRR(solarCF),solarProfit=solarCumSave-solarNetCost;
+  setText('solarProduction',fmt(Math.round(yearlyProd)));setText('solarSavings',fmt(Math.round(solarSaveY1)));setText('solarPayback',isFinite(solarPayback)?solarPayback.toFixed(1):'-');setText('solarIRR',solarIRR.toFixed(1)+'%');setText('solarExcess',fmt(Math.round(excessKwh)));setText('solarSellIncome',fmt(Math.round(solarSellY1)));
+  setText('cmpSolarCost',fmt(solarTotal));setText('cmpSolarTax',fmt(solarTaxSave));setText('cmpSolarNet',fmt(solarNetCost));setText('cmpSolarBillSave',fmt(Math.round(solarBillSaveY1)));setText('cmpSolarSell',fmt(Math.round(solarSellY1)));setText('cmpSolarSave',fmt(Math.round(solarSaveY1)));setText('cmpSolarPB',isFinite(solarPayback)?solarPayback.toFixed(1)+' ปี':'-');setText('cmpSolarProfit',fmt(Math.round(solarProfit)));setText('cmpSolarRec',solarPayback<=8?'✅ คุ้ม':'⚠️ ตรวจสอบ');
+  var sellBackNote=document.getElementById('sellBackNote');var sellIncomeBox=document.getElementById('sellIncomeBox');if(isSellBack){sellIncomeBox.className='result-box';sellBackNote.style.display='block';sellBackNote.innerHTML='✅ เลือกขายไฟส่วนเกินกลับเข้าระบบ: รายได้ขายไฟปีแรกประมาณ <b>'+fmt(Math.round(solarSellY1))+' บาท</b> จากไฟส่วนเกินประมาณ <b>'+fmt(Math.round(excessKwh))+' kWh/ปี</b>.';setText('assumptionSellBack',sellBackRate.toFixed(2)+' บาท/kWh');}else{sellIncomeBox.className='result-box warning';sellBackNote.style.display='block';sellBackNote.innerHTML='⚠️ เลือกไม่ขายไฟคืน: ไฟส่วนเกินประมาณ <b>'+fmt(Math.round(excessKwh))+' kWh/ปี</b> จะไม่ถูกนับเป็นประโยชน์ทางการเงิน. หาก Payback ยาวขึ้นมาก อาจควรลดขนาดระบบหรือเพิ่มการใช้ไฟช่วงกลางวัน.';setText('assumptionSellBack','ไม่ขายคืน = 0 บาท/kWh');}
+  if(batteryKwh>0){
+    document.getElementById('batteryResults').style.display='block';document.getElementById('batteryColHeader').style.display='';setDisplay('#cmpBatteryCost,#cmpBatteryTax,#cmpBatteryNet,#cmpBatteryBillSave,#cmpBatterySell,#cmpBatterySave,#cmpBatteryPB,#cmpBatteryProfit,#cmpBatteryRec','');
+    var battTotal=solarTotal+batteryKwh*batteryCostPerKwh,battTaxSave=useTax?Math.min(battTotal,MAX_TAX)*taxPct:0,battNetCost=battTotal-battTaxSave;
+    var battSelfKwh=Math.min(yearlyProd*selfConsBatt,yearlyKwh),battExKwh=Math.max(0,yearlyProd-battSelfKwh),battBillSaveY1=battSelfKwh*avgRate,battSellY1=isSellBack?battExKwh*sellBackRate:0,battSaveY1=battBillSaveY1+battSellY1;
+    var battCF=[-battNetCost],battCumSave=0;for(var yy=1;yy<=LIFE;yy++){var bdeg=Math.pow(1-DEGRADE,yy-1),besc=Math.pow(1+ESCAL,yy-1),bprodY=yearlyProd*bdeg,bselfY=Math.min(bprodY*selfConsBatt,yearlyKwh),bexY=Math.max(0,bprodY-bselfY),bsellY=isSellBack?bexY*sellBackRate:0,bsaveY=bselfY*avgRate*besc+bsellY;battCF.push(bsaveY);battCumSave+=bsaveY;}
+    var battPayback=battSaveY1>0?battNetCost/battSaveY1:Infinity,battIRR=calcIRR(battCF),battProfit=battCumSave-battNetCost;
+    setText('batteryTotalCost',fmt(battTotal));setText('batterySavings',fmt(Math.round(battSaveY1)));setText('batteryPayback',isFinite(battPayback)?battPayback.toFixed(1):'-');setText('batteryIRR',battIRR.toFixed(1)+'%');setText('batteryExcess',fmt(Math.round(battExKwh)));setText('batterySellIncome',fmt(Math.round(battSellY1)));
+    setText('cmpBatteryCost',fmt(battTotal));setText('cmpBatteryTax',fmt(battTaxSave));setText('cmpBatteryNet',fmt(battNetCost));setText('cmpBatteryBillSave',fmt(Math.round(battBillSaveY1)));setText('cmpBatterySell',fmt(Math.round(battSellY1)));setText('cmpBatterySave',fmt(Math.round(battSaveY1)));setText('cmpBatteryPB',isFinite(battPayback)?battPayback.toFixed(1)+' ปี':'-');setText('cmpBatteryProfit',fmt(Math.round(battProfit)));setText('cmpBatteryRec',battPayback<=10?'✅ คุ้ม':'⚠️ ตรวจสอบ');
+  }else{document.getElementById('batteryResults').style.display='none';document.getElementById('batteryColHeader').style.display='none';setDisplay('#cmpBatteryCost,#cmpBatteryTax,#cmpBatteryNet,#cmpBatteryBillSave,#cmpBatterySell,#cmpBatterySave,#cmpBatteryPB,#cmpBatteryProfit,#cmpBatteryRec','none');}
+  document.getElementById('results').style.display='block';
 }
 </script>
 </body>
